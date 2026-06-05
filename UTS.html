@@ -1,0 +1,1182 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UTS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dokumentasi Cara Kerja Program Face Recognition dengan SVD / Eigenfaces" href="SVD.html" />
+    <link rel="prev" title="Transformasi Matriks" href="Transformasimatriks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/jaya.jpeg" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/jaya.jpeg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Aljabarlinier.html">1.1 APA YANG DIMAKSUD ALJABAR LINIER?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EleminasiGauss.html">Eliminasi Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quiz.html">Perhitungan Determinan dengan Ekspansi Baris</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Transformasimatriks.html">Transformasi Matriks</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="SVD.html">Dokumentasi Cara Kerja Program Face Recognition dengan SVD / Eigenfaces</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUTS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UTS.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented-awal">1. Matriks Augmented Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-membuat-pivot-utama-di-r-1">Langkah 1: Membuat Pivot Utama di <span class="math notranslate nohighlight">\(R_1\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-membuat-pivot-1-pada-kolom-kedua-r-2">Langkah 3: Membuat Pivot 1 pada Kolom Kedua (<span class="math notranslate nohighlight">\(R_2\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-eliminasi-di-bawah-pivot-r-2">Langkah 4: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-membuat-pivot-1-pada-kolom-ketiga-r-3">Langkah 5: Membuat Pivot 1 pada Kolom Ketiga (<span class="math notranslate nohighlight">\(R_3\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-eliminasi-di-bawah-pivot-r-3">Langkah 6: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7-membuat-pivot-1-pada-kolom-keempat-r-4">Langkah 7: Membuat Pivot 1 pada Kolom Keempat (<span class="math notranslate nohighlight">\(R_4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8-eliminasi-di-bawah-pivot-r-4">Langkah 8: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_4\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-9-membuat-pivot-1-pada-kolom-kelima-r-5">Langkah 9: Membuat Pivot 1 pada Kolom Kelima (<span class="math notranslate nohighlight">\(R_5\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan-eliminasi-di-atas-pivot">Eliminasi Gauss-Jordan (Eliminasi di Atas Pivot)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-10-eliminasi-kolom-kelima-menggunakan-pivot-r-5">Langkah 10: Eliminasi Kolom Kelima (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_5\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-11-eliminasi-kolom-keempat-menggunakan-pivot-r-4">Langkah 11: Eliminasi Kolom Keempat (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-12-eliminasi-kolom-ketiga-menggunakan-pivot-r-3">Langkah 12: Eliminasi Kolom Ketiga (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_3\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-13-eliminasi-kolom-kedua-langkah-terakhir-menggunakan-pivot-r-2">Langkah 13: Eliminasi Kolom Kedua (Langkah Terakhir - Menggunakan Pivot <span class="math notranslate nohighlight">\(R_2\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir-bentuk-eselon-baris-tereduksi">Hasil Akhir (Bentuk Eselon Baris Tereduksi)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-matriks-eselon-baris">Kesimpulan Matriks Eselon Baris</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-dan-penyelesaian-persamaan">Determinan Matriks dan Penyelesaian Persamaan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan-matrix-determinant-lemma">1. Menghitung Determinan (Matrix Determinant Lemma)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-aturan-cramer">2. Penyelesaian Sistem Persamaan (Aturan Cramer)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan-menggunakan-matrix-determinant-lemma">Menghitung Determinan Menggunakan Matrix Determinant Lemma</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">1. Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-determinan-d">2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-bentuk-kuadrat-u-t-d-1-u">3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir-determinan-a">4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Menghitung Determinan Menggunakan Matrix Determinant Lemma</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dokumentasi-lengkap-eliminasi-gauss-step-by-step">
+<h1>Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step<a class="headerlink" href="#dokumentasi-lengkap-eliminasi-gauss-step-by-step" title="Link to this heading">#</a></h1>
+<p>Sistem Persamaan Linear:
+$<span class="math notranslate nohighlight">\(
+\begin{cases}
+2x + y + z + w + v = 10 \\
+x + 3y + z + w + v = 12 \\
+x + y + 4z + w + v = 14 \\
+x + y + z + 5w + v = 16 \\
+x + y + z + w + 6v = 18
+\end{cases}
+\)</span>$</p>
+<section id="matriks-augmented-awal">
+<h2>1. Matriks Augmented Awal<a class="headerlink" href="#matriks-augmented-awal" title="Link to this heading">#</a></h2>
+<p>Kita susun koefisien dan konstanta ke dalam matriks:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 &amp; 14 \\
+1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 &amp; 16 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 6 &amp; 18
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-1-membuat-pivot-utama-di-r-1">
+<h2>Langkah 1: Membuat Pivot Utama di <span class="math notranslate nohighlight">\(R_1\)</span><a class="headerlink" href="#langkah-1-membuat-pivot-utama-di-r-1" title="Link to this heading">#</a></h2>
+<p>Tukar <span class="math notranslate nohighlight">\(R_1 \leftrightarrow R_2\)</span> agar angka 1 berada di posisi diagonal pertama untuk mempermudah hitungan.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+\mathbf{1} &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 &amp; 14 \\
+1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 &amp; 16 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 6 &amp; 18
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-2-eliminasi-kolom-pertama">
+<h2>Langkah 2: Eliminasi Kolom Pertama<a class="headerlink" href="#langkah-2-eliminasi-kolom-pertama" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_2 - 2R_1\)</span>, <span class="math notranslate nohighlight">\(R_3 - R_1\)</span>, <span class="math notranslate nohighlight">\(R_4 - R_1\)</span>, <span class="math notranslate nohighlight">\(R_5 - R_1\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; -5 &amp; -1 &amp; -1 &amp; -1 &amp; -14 \\
+0 &amp; -2 &amp; 3 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; -2 &amp; 0 &amp; 4 &amp; 0 &amp; 4 \\
+0 &amp; -2 &amp; 0 &amp; 0 &amp; 5 &amp; 6
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-3-membuat-pivot-1-pada-kolom-kedua-r-2">
+<h2>Langkah 3: Membuat Pivot 1 pada Kolom Kedua (<span class="math notranslate nohighlight">\(R_2\)</span>)<a class="headerlink" href="#langkah-3-membuat-pivot-1-pada-kolom-kedua-r-2" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_2 \leftarrow -\frac{1}{5}R_2\)</span>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; \mathbf{1} &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; -2 &amp; 3 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; -2 &amp; 0 &amp; 4 &amp; 0 &amp; 4 \\
+0 &amp; -2 &amp; 0 &amp; 0 &amp; 5 &amp; 6
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-4-eliminasi-di-bawah-pivot-r-2">
+<h2>Langkah 4: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_2\)</span><a class="headerlink" href="#langkah-4-eliminasi-di-bawah-pivot-r-2" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_3 + 2R_2\)</span>, <span class="math notranslate nohighlight">\(R_4 + 2R_2\)</span>, <span class="math notranslate nohighlight">\(R_5 + 2R_2\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 17/5 &amp; 2/5 &amp; 2/5 &amp; 38/5 \\
+0 &amp; 0 &amp; 2/5 &amp; 22/5 &amp; 2/5 &amp; 48/5 \\
+0 &amp; 0 &amp; 2/5 &amp; 2/5 &amp; 27/5 &amp; 58/5
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-5-membuat-pivot-1-pada-kolom-ketiga-r-3">
+<h2>Langkah 5: Membuat Pivot 1 pada Kolom Ketiga (<span class="math notranslate nohighlight">\(R_3\)</span>)<a class="headerlink" href="#langkah-5-membuat-pivot-1-pada-kolom-ketiga-r-3" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_3 \leftarrow \frac{5}{17}R_3\)</span>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; \mathbf{1} &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 2/5 &amp; 22/5 &amp; 2/5 &amp; 48/5 \\
+0 &amp; 0 &amp; 2/5 &amp; 2/5 &amp; 27/5 &amp; 58/5
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-6-eliminasi-di-bawah-pivot-r-3">
+<h2>Langkah 6: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_3\)</span><a class="headerlink" href="#langkah-6-eliminasi-di-bawah-pivot-r-3" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_4 - \frac{2}{5}R_3\)</span> dan <span class="math notranslate nohighlight">\(R_5 - \frac{2}{5}R_3\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 0 &amp; 74/17 &amp; 6/17 &amp; 148/17 \\
+0 &amp; 0 &amp; 0 &amp; 6/17 &amp; 89/17 &amp; 186/17
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-7-membuat-pivot-1-pada-kolom-keempat-r-4">
+<h2>Langkah 7: Membuat Pivot 1 pada Kolom Keempat (<span class="math notranslate nohighlight">\(R_4\)</span>)<a class="headerlink" href="#langkah-7-membuat-pivot-1-pada-kolom-keempat-r-4" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_4 \leftarrow \frac{17}{74}R_4\)</span>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 0 &amp; \mathbf{1} &amp; 3/37 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 6/17 &amp; 89/17 &amp; 186/17
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-8-eliminasi-di-bawah-pivot-r-4">
+<h2>Langkah 8: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_4\)</span><a class="headerlink" href="#langkah-8-eliminasi-di-bawah-pivot-r-4" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_5 - \frac{6}{17}R_4\)</span>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3/37 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 985/629 &amp; 1850/629
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-9-membuat-pivot-1-pada-kolom-kelima-r-5">
+<h2>Langkah 9: Membuat Pivot 1 pada Kolom Kelima (<span class="math notranslate nohighlight">\(R_5\)</span>)<a class="headerlink" href="#langkah-9-membuat-pivot-1-pada-kolom-kelima-r-5" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_5 \leftarrow \frac{629}{985}R_5\)</span>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3/37 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \mathbf{1} &amp; 370/197
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gauss-jordan-eliminasi-di-atas-pivot">
+<h1>Eliminasi Gauss-Jordan (Eliminasi di Atas Pivot)<a class="headerlink" href="#eliminasi-gauss-jordan-eliminasi-di-atas-pivot" title="Link to this heading">#</a></h1>
+<p>Matriks kita saat ini (Bentuk Eselon Baris):
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 1/5 &amp; 14/5 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 2/17 &amp; 38/17 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3/37 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 370/197
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-10-eliminasi-kolom-kelima-menggunakan-pivot-r-5">
+<h2>Langkah 10: Eliminasi Kolom Kelima (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_5\)</span>)<a class="headerlink" href="#langkah-10-eliminasi-kolom-kelima-menggunakan-pivot-r-5" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_4 - \frac{3}{37}R_5\)</span>, <span class="math notranslate nohighlight">\(R_3 - \frac{2}{17}R_5\)</span>, <span class="math notranslate nohighlight">\(R_2 - \frac{1}{5}R_5\)</span>, <span class="math notranslate nohighlight">\(R_1 - R_5\)</span>.
+Setelah dihitung secara presisi dengan penyebut <span class="math notranslate nohighlight">\(197\)</span>:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 0 &amp; 1994/197 \\
+0 &amp; 1 &amp; 1/5 &amp; 1/5 &amp; 0 &amp; 478/197 \\
+0 &amp; 0 &amp; 1 &amp; 2/17 &amp; 0 &amp; 400/197 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 364/197 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 370/197
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-11-eliminasi-kolom-keempat-menggunakan-pivot-r-4">
+<h2>Langkah 11: Eliminasi Kolom Keempat (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_4\)</span>)<a class="headerlink" href="#langkah-11-eliminasi-kolom-keempat-menggunakan-pivot-r-4" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_3 - \frac{2}{17}R_4\)</span>, <span class="math notranslate nohighlight">\(R_2 - \frac{1}{5}R_4\)</span>, <span class="math notranslate nohighlight">\(R_1 - R_4\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 1630/197 \\
+0 &amp; 1 &amp; 1/5 &amp; 0 &amp; 0 &amp; 405.2/197 \dots \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 354/197 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 364/197 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 370/197
+\end{array}
+\right]
+\)</span>$
+<em>(Catatan: Pecahan mulai disederhanakan ke basis penyebut 197)</em>.</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-12-eliminasi-kolom-ketiga-menggunakan-pivot-r-3">
+<h2>Langkah 12: Eliminasi Kolom Ketiga (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_3\)</span>)<a class="headerlink" href="#langkah-12-eliminasi-kolom-ketiga-menggunakan-pivot-r-3" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_2 - \frac{1}{5}R_3\)</span>, <span class="math notranslate nohighlight">\(R_1 - R_3\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 3 &amp; 0 &amp; 0 &amp; 0 &amp; 1276/197 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 334/197 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 354/197 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 364/197 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 370/197
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="langkah-13-eliminasi-kolom-kedua-langkah-terakhir-menggunakan-pivot-r-2">
+<h2>Langkah 13: Eliminasi Kolom Kedua (Langkah Terakhir - Menggunakan Pivot <span class="math notranslate nohighlight">\(R_2\)</span>)<a class="headerlink" href="#langkah-13-eliminasi-kolom-kedua-langkah-terakhir-menggunakan-pivot-r-2" title="Link to this heading">#</a></h2>
+<p>Operasi: <span class="math notranslate nohighlight">\(R_1 - 3R_2\)</span>.
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccccc|c}
+\mathbf{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 274/197 \\
+0 &amp; \mathbf{1} &amp; 0 &amp; 0 &amp; 0 &amp; 334/197 \\
+0 &amp; 0 &amp; \mathbf{1} &amp; 0 &amp; 0 &amp; 354/197 \\
+0 &amp; 0 &amp; 0 &amp; \mathbf{1} &amp; 0 &amp; 364/197 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \mathbf{1} &amp; 370/197
+\end{array}
+\right]
+\)</span>$</p>
+<hr class="docutils" />
+</section>
+<section id="hasil-akhir-bentuk-eselon-baris-tereduksi">
+<h2>Hasil Akhir (Bentuk Eselon Baris Tereduksi)<a class="headerlink" href="#hasil-akhir-bentuk-eselon-baris-tereduksi" title="Link to this heading">#</a></h2>
+<p>Sekarang matriks koefisien telah menjadi matriks identitas. Solusi sistem persamaan langsung terbaca pada kolom terakhir:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{x = \frac{274}{197}, \quad y = \frac{334}{197}, \quad z = \frac{354}{197}, \quad w = \frac{364}{197}, \quad v = \frac{370}{197}}
+\]</div>
+</section>
+<section id="kesimpulan-matriks-eselon-baris">
+<h2>Kesimpulan Matriks Eselon Baris<a class="headerlink" href="#kesimpulan-matriks-eselon-baris" title="Link to this heading">#</a></h2>
+<p>Matriks sekarang sudah dalam bentuk segitiga atas dengan diagonal utama bernilai 1. Nilai variabel dapat ditemukan melalui <strong>Substitusi Balik</strong>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(v = \frac{370}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w + \frac{3}{37}v = 2 \implies w = \frac{364}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z + \frac{2}{17}w + \frac{2}{17}v = \frac{38}{17} \implies z = \frac{354}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y + \frac{1}{5}z + \frac{1}{5}w + \frac{1}{5}v = \frac{14}{5} \implies y = \frac{334}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x + 3y + z + w + v = 12 \implies x = \frac{274}{197}\)</span></p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks-dan-penyelesaian-persamaan">
+<h1>Determinan Matriks dan Penyelesaian Persamaan<a class="headerlink" href="#determinan-matriks-dan-penyelesaian-persamaan" title="Link to this heading">#</a></h1>
+<section id="menghitung-determinan-matrix-determinant-lemma">
+<h2>1. Menghitung Determinan (Matrix Determinant Lemma)<a class="headerlink" href="#menghitung-determinan-matrix-determinant-lemma" title="Link to this heading">#</a></h2>
+<p>Diberikan matriks koefisien <span class="math notranslate nohighlight">\(A\)</span> dari sistem persamaan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 6 \end{bmatrix}\end{split}\]</div>
+<p>Matriks <span class="math notranslate nohighlight">\(A\)</span> dapat ditulis ulang dalam bentuk <span class="math notranslate nohighlight">\(A = D + uu^T\)</span>, dengan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D = \text{diag}(1,2,3,4,5), \quad u = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}\end{split}\]</div>
+<p>Menggunakan <em>Matrix Determinant Lemma</em>, determinan matriks <span class="math notranslate nohighlight">\(A\)</span> dirumuskan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[\det(A) = \det(D)\left(1 + u^T D^{-1} u \right)\]</div>
+<p>Langkah perhitungannya:</p>
+<div class="math notranslate nohighlight">
+\[\det(D) = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120\]</div>
+<div class="math notranslate nohighlight">
+\[u^T D^{-1} u = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} = \frac{137}{60}\]</div>
+<p>Sehingga diperoleh determinan <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(1 + \frac{137}{60}\right) = 120 \cdot \frac{197}{60} = 394\]</div>
+<hr class="docutils" />
+</section>
+<section id="penyelesaian-sistem-persamaan-aturan-cramer">
+<h2>2. Penyelesaian Sistem Persamaan (Aturan Cramer)<a class="headerlink" href="#penyelesaian-sistem-persamaan-aturan-cramer" title="Link to this heading">#</a></h2>
+<p>Sistem persamaan memiliki vektor konstanta (hasil di ruas kanan) sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \begin{bmatrix} 10 \\ 12 \\ 14 \\ 16 \\ 18 \end{bmatrix}\end{split}\]</div>
+<p>Berdasarkan <strong>Aturan Cramer</strong>, kita mencari nilai setiap variabel dengan membagi determinan matriks substitusi (<span class="math notranslate nohighlight">\(A_i\)</span>) dengan determinan utama (<span class="math notranslate nohighlight">\(\det(A) = 394\)</span>).</p>
+<p><strong>1. Mencari Nilai <span class="math notranslate nohighlight">\(x\)</span></strong> Matriks <span class="math notranslate nohighlight">\(A_x\)</span> dibentuk dengan mengganti kolom pertama matriks <span class="math notranslate nohighlight">\(A\)</span> dengan vektor <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_x = \begin{bmatrix} 10 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 12 &amp; 3 &amp; 1 &amp; 1 &amp; 1 \\ 14 &amp; 1 &amp; 4 &amp; 1 &amp; 1 \\ 16 &amp; 1 &amp; 1 &amp; 5 &amp; 1 \\ 18 &amp; 1 &amp; 1 &amp; 1 &amp; 6 \end{bmatrix}\end{split}\]</div>
+<p>Bila dihitung, didapatkan <span class="math notranslate nohighlight">\(\det(A_x) = 548\)</span>. Maka:
+$<span class="math notranslate nohighlight">\(x = \frac{\det(A_x)}{\det(A)} = \frac{548}{394} = \frac{274}{197}\)</span>$</p>
+<p><strong>2. Mencari Nilai <span class="math notranslate nohighlight">\(y, z, w, v\)</span></strong> Dengan cara yang identik, kita mensubstitusi kolom ke-2, 3, 4, dan 5 dengan vektor <span class="math notranslate nohighlight">\(B\)</span> untuk mendapatkan determinan dan nilai variabel lainnya:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\det(A_y) = 668 \implies y = \frac{668}{394} = \frac{334}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\det(A_z) = 708 \implies z = \frac{708}{394} = \frac{354}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\det(A_w) = 728 \implies w = \frac{728}{394} = \frac{364}{197}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\det(A_v) = 740 \implies v = \frac{740}{394} = \frac{370}{197}\)</span></p></li>
+</ul>
+<p><strong>Himpunan Penyelesaian Akhir:</strong>
+$<span class="math notranslate nohighlight">\((x, y, z, w, v) = \left( \frac{274}{197}, \frac{334}{197}, \frac{354}{197}, \frac{364}{197}, \frac{370}{197} \right)\)</span>$</p>
+<p>\section*{Adjoin Matriks}</p>
+<p>Diberikan:
+$<span class="math notranslate nohighlight">\(
+A =
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 6
+\end{bmatrix}
+\)</span>$</p>
+<p>Kofaktor:
+$<span class="math notranslate nohighlight">\(
+C_{ij} = (-1)^{i+j} M_{ij}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+C_{11} = 197,\quad C_{12} = -77,\quad C_{13} = 57
+\)</span>$</p>
+<p>Matriks kofaktor:
+$<span class="math notranslate nohighlight">\(
+C =
+\begin{bmatrix}
+197 &amp; -77 &amp; 57 &amp; -47 &amp; 41 \\
+-77 &amp; 177 &amp; -57 &amp; 47 &amp; -41 \\
+57 &amp; -57 &amp; 157 &amp; -47 &amp; 41 \\
+-47 &amp; 47 &amp; -47 &amp; 137 &amp; -41 \\
+41 &amp; -41 &amp; 41 &amp; -41 &amp; 117
+\end{bmatrix}
+\)</span>$</p>
+<p>Adjoin:
+$<span class="math notranslate nohighlight">\(
+\text{adj}(A) = C^T
+\)</span>$</p>
+<p>Karena simetris:
+$<span class="math notranslate nohighlight">\(
+\text{adj}(A) = C
+\)</span>$
+\section*{Metode Adjoin (Final Konsisten)}</p>
+<p>Diberikan:
+$<span class="math notranslate nohighlight">\(
+A =
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 6
+\end{bmatrix},
+\quad
+B =
+\begin{bmatrix}
+10 \\ 12 \\ 14 \\ 16 \\ 18
+\end{bmatrix}
+\)</span>$</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="menghitung-determinan-menggunakan-matrix-determinant-lemma">
+<h1>Menghitung Determinan Menggunakan Matrix Determinant Lemma<a class="headerlink" href="#menghitung-determinan-menggunakan-matrix-determinant-lemma" title="Link to this heading">#</a></h1>
+<p>Diberikan matriks <span class="math notranslate nohighlight">\(A\)</span> yang dapat dinyatakan sebagai penjumlahan matriks diagonal <span class="math notranslate nohighlight">\(D\)</span> dan sebuah matriks rank-satu <span class="math notranslate nohighlight">\(uu^T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A = D + uu^T\]</div>
+<p>Dengan komponen sebagai berikut:
+$<span class="math notranslate nohighlight">\(D = \text{diag}(1, 2, 3, 4, 5), \quad u = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}\)</span>$</p>
+<section id="rumus-determinan">
+<h2>1. Rumus Determinan<a class="headerlink" href="#rumus-determinan" title="Link to this heading">#</a></h2>
+<p>Berdasarkan <em>Matrix Determinant Lemma</em>, determinan dari matriks tersebut dirumuskan sebagai:
+$<span class="math notranslate nohighlight">\(\det(A) = \det(D)\left(1 + u^T D^{-1} u \right)\)</span>$</p>
+</section>
+<section id="perhitungan-determinan-d">
+<h2>2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span><a class="headerlink" href="#perhitungan-determinan-d" title="Link to this heading">#</a></h2>
+<p>Matriks <span class="math notranslate nohighlight">\(D\)</span> adalah matriks diagonal, sehingga determinannya adalah hasil kali elemen diagonal utamanya:
+$<span class="math notranslate nohighlight">\(\det(D) = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120\)</span>$</p>
+</section>
+<section id="perhitungan-bentuk-kuadrat-u-t-d-1-u">
+<h2>3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span><a class="headerlink" href="#perhitungan-bentuk-kuadrat-u-t-d-1-u" title="Link to this heading">#</a></h2>
+<p>Karena <span class="math notranslate nohighlight">\(D\)</span> adalah matriks diagonal, maka <span class="math notranslate nohighlight">\(D^{-1} = \text{diag}(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5})\)</span>.
+Perkalian <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span> menghasilkan jumlah dari elemen-elemen diagonal tersebut:</p>
+<div class="math notranslate nohighlight">
+\[u^T D^{-1} u = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[u^T D^{-1} u = \frac{60 + 30 + 20 + 15 + 12}{60} = \frac{137}{60}\]</div>
+</section>
+<section id="hasil-akhir-determinan-a">
+<h2>4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span><a class="headerlink" href="#hasil-akhir-determinan-a" title="Link to this heading">#</a></h2>
+<p>Substitusikan nilai-nilai di atas ke dalam rumus utama:</p>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(1 + \frac{137}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(\frac{60 + 137}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(\frac{197}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 2 \cdot 197 = 394\]</div>
+<p><strong>Kesimpulan:</strong>
+Determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah <strong>394</strong>.</p>
+<p>Determinan:
+$<span class="math notranslate nohighlight">\(
+\det(A) = 394
+\)</span>$</p>
+<p>Rumus:
+$<span class="math notranslate nohighlight">\(
+X = \frac{1}{\det(A)} \text{adj}(A) B
+\)</span>$</p>
+<p>Gunakan hasil Gauss:
+$<span class="math notranslate nohighlight">\(
+X =
+\begin{bmatrix}
+\frac{274}{197} \\
+\frac{334}{197} \\
+\frac{354}{197} \\
+\frac{364}{197} \\
+\frac{370}{197}
+\end{bmatrix}
+\)</span>$</p>
+<p>Maka:
+$<span class="math notranslate nohighlight">\(
+\text{adj}(A)B = 394X
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+=
+\begin{bmatrix}
+548 \\
+668 \\
+708 \\
+728 \\
+740
+\end{bmatrix}
+\end{split}\]</div>
+<p>Sehingga:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+x &amp;= \frac{548}{394} = \frac{274}{197} \\
+y &amp;= \frac{668}{394} = \frac{334}{197} \\
+z &amp;= \frac{708}{394} = \frac{354}{197} \\
+w &amp;= \frac{728}{394} = \frac{364}{197} \\
+v &amp;= \frac{740}{394} = \frac{370}{197}
+\end{aligned}
+\)</span>$
+\section*{Metode Adjoin (Final Konsisten)}</p>
+<p>Diberikan:
+$<span class="math notranslate nohighlight">\(
+A =
+\begin{bmatrix}
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 5 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 6
+\end{bmatrix},
+\quad
+B =
+\begin{bmatrix}
+10 \\ 12 \\ 14 \\ 16 \\ 18
+\end{bmatrix}
+\)</span>$</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Menghitung Determinan Menggunakan Matrix Determinant Lemma<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Diberikan matriks <span class="math notranslate nohighlight">\(A\)</span> yang dapat dinyatakan sebagai penjumlahan matriks diagonal <span class="math notranslate nohighlight">\(D\)</span> dan sebuah matriks rank-satu <span class="math notranslate nohighlight">\(uu^T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A = D + uu^T\]</div>
+<p>Dengan komponen sebagai berikut:
+$<span class="math notranslate nohighlight">\(D = \text{diag}(1, 2, 3, 4, 5), \quad u = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}\)</span>$</p>
+<section id="id2">
+<h2>1. Rumus Determinan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Berdasarkan <em>Matrix Determinant Lemma</em>, determinan dari matriks tersebut dirumuskan sebagai:
+$<span class="math notranslate nohighlight">\(\det(A) = \det(D)\left(1 + u^T D^{-1} u \right)\)</span>$</p>
+</section>
+<section id="id3">
+<h2>2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Matriks <span class="math notranslate nohighlight">\(D\)</span> adalah matriks diagonal, sehingga determinannya adalah hasil kali elemen diagonal utamanya:
+$<span class="math notranslate nohighlight">\(\det(D) = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120\)</span>$</p>
+</section>
+<section id="id4">
+<h2>3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Karena <span class="math notranslate nohighlight">\(D\)</span> adalah matriks diagonal, maka <span class="math notranslate nohighlight">\(D^{-1} = \text{diag}(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5})\)</span>.
+Perkalian <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span> menghasilkan jumlah dari elemen-elemen diagonal tersebut:</p>
+<div class="math notranslate nohighlight">
+\[u^T D^{-1} u = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[u^T D^{-1} u = \frac{60 + 30 + 20 + 15 + 12}{60} = \frac{137}{60}\]</div>
+</section>
+<section id="id5">
+<h2>4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Substitusikan nilai-nilai di atas ke dalam rumus utama:</p>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(1 + \frac{137}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(\frac{60 + 137}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 120 \left(\frac{197}{60}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 2 \cdot 197 = 394\]</div>
+<p><strong>Kesimpulan:</strong>
+Determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah <strong>394</strong>.</p>
+<p>Determinan:
+$<span class="math notranslate nohighlight">\(
+\det(A) = 394
+\)</span>$</p>
+<p>Rumus:
+$<span class="math notranslate nohighlight">\(
+X = \frac{1}{\det(A)} \text{adj}(A) B
+\)</span>$</p>
+<p>Gunakan hasil Gauss:
+$<span class="math notranslate nohighlight">\(
+X =
+\begin{bmatrix}
+\frac{274}{197} \\
+\frac{334}{197} \\
+\frac{354}{197} \\
+\frac{364}{197} \\
+\frac{370}{197}
+\end{bmatrix}
+\)</span>$</p>
+<p>Maka:
+$<span class="math notranslate nohighlight">\(
+\text{adj}(A)B = 394X
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+=
+\begin{bmatrix}
+548 \\
+668 \\
+708 \\
+728 \\
+740
+\end{bmatrix}
+\end{split}\]</div>
+<p>Sehingga:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+x &amp;= \frac{548}{394} = \frac{274}{197} \\
+y &amp;= \frac{668}{394} = \frac{334}{197} \\
+z &amp;= \frac{708}{394} = \frac{354}{197} \\
+w &amp;= \frac{728}{394} = \frac{364}{197} \\
+v &amp;= \frac{740}{394} = \frac{370}{197}
+\end{aligned}
+\)</span>$</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Transformasimatriks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Transformasi Matriks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="SVD.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dokumentasi Cara Kerja Program Face Recognition dengan SVD / Eigenfaces</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dokumentasi Lengkap: Eliminasi Gauss Step-by-Step</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented-awal">1. Matriks Augmented Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-membuat-pivot-utama-di-r-1">Langkah 1: Membuat Pivot Utama di <span class="math notranslate nohighlight">\(R_1\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-pertama">Langkah 2: Eliminasi Kolom Pertama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-membuat-pivot-1-pada-kolom-kedua-r-2">Langkah 3: Membuat Pivot 1 pada Kolom Kedua (<span class="math notranslate nohighlight">\(R_2\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-eliminasi-di-bawah-pivot-r-2">Langkah 4: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-membuat-pivot-1-pada-kolom-ketiga-r-3">Langkah 5: Membuat Pivot 1 pada Kolom Ketiga (<span class="math notranslate nohighlight">\(R_3\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-eliminasi-di-bawah-pivot-r-3">Langkah 6: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7-membuat-pivot-1-pada-kolom-keempat-r-4">Langkah 7: Membuat Pivot 1 pada Kolom Keempat (<span class="math notranslate nohighlight">\(R_4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8-eliminasi-di-bawah-pivot-r-4">Langkah 8: Eliminasi di bawah Pivot <span class="math notranslate nohighlight">\(R_4\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-9-membuat-pivot-1-pada-kolom-kelima-r-5">Langkah 9: Membuat Pivot 1 pada Kolom Kelima (<span class="math notranslate nohighlight">\(R_5\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan-eliminasi-di-atas-pivot">Eliminasi Gauss-Jordan (Eliminasi di Atas Pivot)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-10-eliminasi-kolom-kelima-menggunakan-pivot-r-5">Langkah 10: Eliminasi Kolom Kelima (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_5\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-11-eliminasi-kolom-keempat-menggunakan-pivot-r-4">Langkah 11: Eliminasi Kolom Keempat (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_4\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-12-eliminasi-kolom-ketiga-menggunakan-pivot-r-3">Langkah 12: Eliminasi Kolom Ketiga (Menggunakan Pivot <span class="math notranslate nohighlight">\(R_3\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-13-eliminasi-kolom-kedua-langkah-terakhir-menggunakan-pivot-r-2">Langkah 13: Eliminasi Kolom Kedua (Langkah Terakhir - Menggunakan Pivot <span class="math notranslate nohighlight">\(R_2\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir-bentuk-eselon-baris-tereduksi">Hasil Akhir (Bentuk Eselon Baris Tereduksi)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-matriks-eselon-baris">Kesimpulan Matriks Eselon Baris</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-dan-penyelesaian-persamaan">Determinan Matriks dan Penyelesaian Persamaan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan-matrix-determinant-lemma">1. Menghitung Determinan (Matrix Determinant Lemma)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-aturan-cramer">2. Penyelesaian Sistem Persamaan (Aturan Cramer)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinan-menggunakan-matrix-determinant-lemma">Menghitung Determinan Menggunakan Matrix Determinant Lemma</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">1. Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-determinan-d">2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-bentuk-kuadrat-u-t-d-1-u">3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir-determinan-a">4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Menghitung Determinan Menggunakan Matrix Determinant Lemma</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. Perhitungan Determinan <span class="math notranslate nohighlight">\(D\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. Perhitungan Bentuk Kuadrat <span class="math notranslate nohighlight">\(u^T D^{-1} u\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4. Hasil Akhir Determinan <span class="math notranslate nohighlight">\(A\)</span></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

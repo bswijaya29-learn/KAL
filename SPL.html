@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Sistem Persamaan Linear &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SPL';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -283,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSPL.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +315,7 @@
       
       
       
-      <li><a href="_sources/markdown.md" target="_blank"
+      <li><a href="_sources/SPL.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +391,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Sistem Persamaan Linear</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,10 +401,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-persamaan-linear">1. Definisi Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-persamaan">Klasifikasi Persamaan:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linear-spl">2. Sistem Persamaan Linear (SPL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-solusi-spl">Karakteristik Solusi SPL:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks">3. Representasi Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-sagemath">4. Implementasi Komputasi (SageMath)</a></li>
 </ul>
             </nav>
         </div>
@@ -414,59 +422,61 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Link to this heading">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linear">
+<h1>Sistem Persamaan Linear<a class="headerlink" href="#sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="definisi-persamaan-linear">
+<h2>1. Definisi Persamaan Linear<a class="headerlink" href="#definisi-persamaan-linear" title="Link to this heading">#</a></h2>
+<p>Sebuah <em>persamaan linear</em> dalam <span class="math notranslate nohighlight">\(n\)</span> variabel (<span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span>) adalah persamaan yang dapat disederhanakan menjadi bentuk baku:</p>
+<div class="math notranslate nohighlight">
+\[a_1x_1 + a_2x_2 + \dots + a_nx_n = b\]</div>
+<ul class="simple">
+<li><p><em>Variabel:</em> <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span> adalah peubah yang tidak diketahui.</p></li>
+<li><p><em>Koefisien:</em> <span class="math notranslate nohighlight">\(a_1, a_2, \dots, a_n\)</span> adalah bilangan real tetap.</p></li>
+<li><p><em>Konstanta:</em> <span class="math notranslate nohighlight">\(b\)</span> adalah bilangan real di ruas kanan.</p></li>
+</ul>
+<section id="klasifikasi-persamaan">
+<h3>Klasifikasi Persamaan:<a class="headerlink" href="#klasifikasi-persamaan" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><em>Homogen:</em> Jika <span class="math notranslate nohighlight">\(b = 0\)</span>.</p></li>
+<li><p><em>Nonhomogen:</em> Jika <span class="math notranslate nohighlight">\(b \neq 0\)</span>.</p></li>
+<li><p><em>Nonlinear:</em> Jika variabel memiliki pangkat selain satu (misal: <span class="math notranslate nohighlight">\(x^2\)</span>), terdapat perkalian antar variabel (misal: <span class="math notranslate nohighlight">\(xy\)</span>), atau variabel berada di dalam fungsi non-polinomial (misal: <span class="math notranslate nohighlight">\(\sin(x)\)</span>).</p></li>
+</ol>
 </section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Link to this heading">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
 </section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span class="bibtex-citation" id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HdHPK14</a><span class="fn-bracket">]</span></span>
-<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</div>
-</div>
-</div>
+<hr class="docutils" />
+<section id="sistem-persamaan-linear-spl">
+<h2>2. Sistem Persamaan Linear (SPL)<a class="headerlink" href="#sistem-persamaan-linear-spl" title="Link to this heading">#</a></h2>
+<p>SPL adalah himpunan atau kumpulan dari beberapa persamaan linear. Sebuah sistem disebut <em>homogen</em> jika seluruh persamaan di dalamnya adalah homogen.</p>
+<section id="karakteristik-solusi-spl">
+<h3>Karakteristik Solusi SPL:<a class="headerlink" href="#karakteristik-solusi-spl" title="Link to this heading">#</a></h3>
+<p>Setiap SPL memiliki salah satu dari tiga kemungkinan solusi berikut:</p>
+<ol class="arabic simple">
+<li><p><em>Tidak Konsisten:</em> Tidak memiliki solusi (himpunan kosong).</p></li>
+<li><p><em>Konsisten (Solusi Tunggal):</em> Memiliki tepat satu pasang nilai variabel yang memenuhi.</p></li>
+<li><p><em>Konsisten (Solusi Tak Hingga):</em> Memiliki banyak sekali penyelesaian.</p></li>
+</ol>
 </section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="representasi-matriks">
+<h2>3. Representasi Matriks<a class="headerlink" href="#representasi-matriks" title="Link to this heading">#</a></h2>
+<p>Untuk mempermudah komputasi, SPL sering direpresentasikan dalam bentuk matriks.</p>
+<ul class="simple">
+<li><p><em>Matriks Koefisien (<span class="math notranslate nohighlight">\(A\)</span>):</em> Matriks yang elemennya terdiri dari koefisien-koefisien variabel.</p></li>
+<li><p><em>Vektor Konstanta (<span class="math notranslate nohighlight">\(\mathbf{b}\)</span>):</em> Vektor kolom yang berisi nilai-nilai <span class="math notranslate nohighlight">\(b\)</span> dari tiap persamaan.</p></li>
+<li><p><em>Matriks Augmentasi (<span class="math notranslate nohighlight">\([A | \mathbf{b}]\)</span>):</em> Matriks yang menggabungkan matriks koefisien dan vektor konstanta dalam satu tampilan untuk mempermudah operasi baris.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="implementasi-komputasi-sagemath">
+<h2>4. Implementasi Komputasi (SageMath)<a class="headerlink" href="#implementasi-komputasi-sagemath" title="Link to this heading">#</a></h2>
+<p>Materi ini juga memperkenalkan penggunaan <em>Sage</em> untuk memproses matriks secara otomatis:</p>
+<ul class="simple">
+<li><p><em>Membuat Matriks:</em> A = matrix(QQ, baris, kolom, [[elemen]])</p></li>
+<li><p><em>Augmentasi:</em> M = A.augment(b) digunakan untuk menempelkan vektor konstanta ke matriks koefisien.</p></li>
+<li><p><em>Subdivisi:</em> M.subdivide([baris],[kolom]) digunakan untuk memberikan garis pemisah visual agar matriks lebih mudah dibaca.</p></li>
+</ul>
 </section>
 </section>
 
@@ -518,10 +528,16 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-persamaan-linear">1. Definisi Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-persamaan">Klasifikasi Persamaan:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linear-spl">2. Sistem Persamaan Linear (SPL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-solusi-spl">Karakteristik Solusi SPL:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks">3. Representasi Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-sagemath">4. Implementasi Komputasi (SageMath)</a></li>
 </ul>
   </nav></div>
 
